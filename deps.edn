@@ -1,3 +1,1 @@
-{:paths ["resources" "src" "env"]
- :deps  {org.clojure/clojurescript {:mvn/version "1.10.520"}
-         cider/cider-nrepl {:mvn/version "0.21.1"}}}
+{:paths ["resources" "src" "env"]}

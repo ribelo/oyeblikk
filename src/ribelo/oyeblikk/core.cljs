@@ -351,7 +351,7 @@
 (defn sub-years [^js/Date d ^long n]
   (dt/subYears d n))
 
-(defn add [^js/Date d  ^Keyword period ^long n]
+(defn add [^js/Date d ^Keyword period ^long n]
   (case period
     :milliseconds (add-milliseconds d n)
     :ms (add-milliseconds d n)
@@ -370,7 +370,7 @@
     :years (add-years d n)
     :y (add-years d n)))
 
-(defn sub [^js/Date d  ^Keyword period ^long n]
+(defn sub [^js/Date d ^Keyword period ^long n]
   (case period
     :milliseconds (sub-milliseconds d n)
     :ms (sub-milliseconds d n)
@@ -389,13 +389,16 @@
     :years (sub-years d n)
     :y (sub-years d n)))
 
-(defn range [^js/Date d1 ^js/Date d2 ^Keyword period]
-  {:pre [(valid? d1)
-         (valid? d2)
-         (before? d1 d2)]}
-  (take-while
-   #(before? % (add d2 period 1))
-   (iterate #(add % period 1) d1)))
+(defn range
+  ([^js/Date d1 ^js/Date d2 ^Keyword period ^long n]
+   {:pre [(valid? d1)
+          (valid? d2)
+          (before? d1 d2)]}
+   (take-while
+    #(before? % (add d2 period n))
+    (iterate #(add % period n) d1)))
+  ([^js/Date d1 ^js/Date d2 ^Keyword period]
+   (range d1 d2 period 1)))
 
 (defprotocol Datetime
   (date-time [x]))

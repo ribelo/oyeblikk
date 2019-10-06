@@ -2,10 +2,10 @@
   "name": "oyeblikk",
   "version": "0.0.1",
   "dependencies": {
-    "date-fns": "^2.0.0-alpha.27"
+    "date-fns": "^2.4.1"
   },
   "devDependencies": {
-    "core-js": "^2.6.5"
+    "core-js": "^2.6.9"
   },
   "author": "",
   "license": "MIT"

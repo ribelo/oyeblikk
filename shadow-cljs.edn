@@ -3,6 +3,4 @@
  :builds {:repl {:target           :node-script
                  :main             ribelo.oyeblikk.repl/main
                  :output-to        "dist/oyeblikk.js"
-                 :compiler-options {:optimizations   :simple
-                                    :external-config {:ghostwheel {}}}
-                 :devtools         {:after-load eglaf.core/reload!}}}}
+                 :compiler-options {:optimizations :simple}}}}
