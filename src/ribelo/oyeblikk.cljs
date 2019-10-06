@@ -1,4 +1,4 @@
-(ns ribelo.oyeblikk.core
+(ns ribelo.oyeblikk
   (:refer-clojure :exclude [compare clone format min max range])
   (:require ["date-fns" :as dt]))
 
